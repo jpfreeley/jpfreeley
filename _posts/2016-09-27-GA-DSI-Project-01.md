@@ -2,19 +2,17 @@
 layout:     post
 title:      Project 1 - 2001 SAT Scores
 date:       2016-09-27 23:00:00
-summary:    Overview and description of our introductory Data Science Immersive project
+summary:    Overview and description of my introductory Data Science Immersive project
 categories: project dsi python
 ---
 
-A First Level Header
-====================
-
-A Second Level Header
+Week 1 Project Overview
 ---------------------
-
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
+The project this week was meant as an introduction to Python data analysis and visualization. It required us to:
++ create several different list and dictionary data structures
++ slice and select subsets of the full data set
++ perform simple descriptive statistics on the data
++ create graphs with MatPlotLib, Seaborn and Tableau to visualize the data
 
 
 The quick brown fox jumped over the lazy
