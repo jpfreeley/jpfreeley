@@ -23,7 +23,11 @@ The project this week was meant as an introduction to Python data analysis and v
 ### ACQUIRE THE DATA
 
 The data as provided to us as a csv file.
+It is 4 columns wide by 53 rows (including header labels and national averages). The data dictionary begins.
+
 "sat_scores.csv"
+
+The data was clean but needs to have some fields types recast
 <br>1 header row of the following values: *State, Rate, Verbal, Math*
 <br>*State* -- string, State of the testing
 <br>*Rate* -- float, percentage of participation for that 'state'
@@ -31,6 +35,8 @@ The data as provided to us as a csv file.
 <br>*Math* -- float, Average value of Math score within that State
 <br><br>*NOTE1:* there is also a 'summary' row denoted by "All" in the State column which represents the national averages
 <br>*NOTE2:* Washington, DC is treated as a "State"
+
+
 
 ### PARSE THE DATA
 
