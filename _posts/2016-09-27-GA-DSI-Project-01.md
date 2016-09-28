@@ -10,31 +10,18 @@ Week 1 Project Overview
 ---------------------
 The project this week was meant as an introduction to Python data analysis and visualization. It required me to:
 
-*   create several different list and dictionary data structures
+*   create several different Python list [] and dictionary {} data structures
+*   manipulate Python dictionaries using "list comprehensions", unpacking and "for loops"
 *   slice and select subsets of the full data set
-*   perform simple descriptive statistics on the data
-*   create graphs with MatPlotLib, Seaborn and Tableau to visualize the data
-*   Candy.
-*   Gum.
-*   Booze.
-this:
+*   perform simple descriptive statistics on the data (min, max, mean, median, standard deviation)
+*   create scatterplots, histograms, box plots and heatmaps with MatPlotLib, PyPlot, Seaborn and Tableau to visualize the data
 
-+ Candy
-+ Gum
-+ Booze
-and this:
+*Note: The methodology below is drawn from the "Data Science Workflow" document provided by General Assembly
 
--   Candy.
--   Gum.
--   Booze.
+### IDENTIFY THE PROBLEM
+### ACQUIRE THE DATA
+### PARSE THE DATA
+### MINE THE DATA
 
-The quick brown fox jumped over the lazy
-dog's back.
 
-### Header 3
-
-> This is a blockquote.
->
-> This is the second paragraph in the blockquote.
->
-> ## This is an H2 in a blockquote
+The data as provided to us as a csv file
