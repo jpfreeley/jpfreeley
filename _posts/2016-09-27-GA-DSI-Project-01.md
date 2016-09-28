@@ -26,5 +26,12 @@ The project this week was meant as an introduction to Python data analysis and v
 
 ### MINE THE DATA
 
+### REFINE THE DATA
+
+### BUILD A DATA MODEL
+
+### PRESENT RESULTS
+
+### DEPLOY AND VALIDATE
 
 The data as provided to us as a csv file
