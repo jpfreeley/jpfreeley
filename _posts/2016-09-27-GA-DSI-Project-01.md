@@ -21,7 +21,15 @@ The project this week was meant as an introduction to Python data analysis and v
 ### IDENTIFY THE PROBLEM
 
 ### ACQUIRE THE DATA
-
+The data as provided to us as a csv file.
+"sat_scores.csv"
+1 header row of the following values: *State, Rate, Verbal, Math*
+*State* -- string, State of the testing
+*Rate* -- float, percentage of participation for that 'state'
+*Verbal* -- float, Average value of Verbal Score within that State
+*Math* -- float, Average value of Math score within that State
+*NOTE1:* there is also a 'summary' row denoted by "All" in the State column which represents the national averages
+*NOTE2:* Washington, DC is treated as a "State"
 ### PARSE THE DATA
 
 ### MINE THE DATA
@@ -33,5 +41,3 @@ The project this week was meant as an introduction to Python data analysis and v
 ### PRESENT RESULTS
 
 ### DEPLOY AND VALIDATE
-
-The data as provided to us as a csv file
