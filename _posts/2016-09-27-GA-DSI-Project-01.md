@@ -14,6 +14,21 @@ The project this week was meant as an introduction to Python data analysis and v
 + perform simple descriptive statistics on the data
 + create graphs with MatPlotLib, Seaborn and Tableau to visualize the data
 
+Unordered (bulleted) lists use asterisks, pluses, and hyphens (*, +, and -) as list markers. These three markers are interchangable; this:
+
+*   Candy.
+*   Gum.
+*   Booze.
+this:
+
++   Candy.
++   Gum.
++   Booze.
+and this:
+
+-   Candy.
+-   Gum.
+-   Booze.
 
 The quick brown fox jumped over the lazy
 dog's back.
