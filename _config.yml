@@ -2,7 +2,7 @@
 title:       JP Freeley - GA - DSI - Blog
 email:       jpf321@gmail.com
 author:      JP Freeley
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "A blog for JP Freeley's General Assembly Data Science Immersive"
 baseurl:     ""
 url:         "http://jpfreeley.github.io"
 date_format: "%b %-d, %Y"
