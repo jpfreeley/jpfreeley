@@ -9,10 +9,10 @@ categories: project dsi python
 Week 1 Project Overview
 ---------------------
 The project this week was meant as an introduction to Python data analysis and visualization. It required us to:
-+ create several different list and dictionary data structures
-+ slice and select subsets of the full data set
-+ perform simple descriptive statistics on the data
-+ create graphs with MatPlotLib, Seaborn and Tableau to visualize the data
++    create several different list and dictionary data structures
++    slice and select subsets of the full data set
++    perform simple descriptive statistics on the data
++    create graphs with MatPlotLib, Seaborn and Tableau to visualize the data
 
 Unordered (bulleted) lists use asterisks, pluses, and hyphens (*, +, and -) as list markers. These three markers are interchangable; this:
 
