@@ -9,6 +9,7 @@ categories: project dsi python
 Week 1 Project Overview
 ---------------------
 The project this week was meant as an introduction to Python data analysis and visualization. It required me to:
+
 *   create several different list and dictionary data structures
 *   slice and select subsets of the full data set
 *   perform simple descriptive statistics on the data
