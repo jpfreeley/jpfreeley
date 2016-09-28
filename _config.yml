@@ -3,7 +3,7 @@ title:       JP Freeley - GA - DSI - Blog
 email:       jpf321@gmail.com
 author:      JP Freeley
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
-baseurl:     "http://jpfreeley.github.io"
+baseurl:     ""
 url:         "http://jpfreeley.github.io"
 date_format: "%b %-d, %Y"
 
