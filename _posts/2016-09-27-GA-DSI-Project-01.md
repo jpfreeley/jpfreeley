@@ -20,13 +20,15 @@ The project this week was meant as an introduction to Python data analysis and v
 
 ### IDENTIFY THE PROBLEM
 
+The College Board would like to analyze the State based data of the 2001 SAT scores.
+
 ### ACQUIRE THE DATA
 
 The data as provided to us as a csv file.
 It is 4 columns wide by 53 rows (including header labels and national averages). The data dictionary begins.
 
 "sat_scores.csv"
-
+_The data is delimited with commas_
 The data was clean but needs to have some fields types recast
 <br>1 header row of the following values: *State, Rate, Verbal, Math*
 <br>*State* -- string, State of the testing
@@ -36,16 +38,26 @@ The data was clean but needs to have some fields types recast
 <br><br>*NOTE1:* there is also a 'summary' row denoted by "All" in the State column which represents the national averages
 <br>*NOTE2:* Washington, DC is treated as a "State"
 
-
-
 ### PARSE THE DATA
+
+The csv data was brought into Python as a list of lists and converted to a properly typed dictionary data structure. Several different dictionaries were created for various functional reasons.
 
 ### MINE THE DATA
 
+The data was statistically described using mean, standard deviation, minimum and maximum for each of the numeric columns of the dataset.
+
 ### REFINE THE DATA
+
+The data provided did not require further refinement
 
 ### BUILD A DATA MODEL
 
+There was no need to build a data model for this project.
+
 ### PRESENT RESULTS
 
+TBD
+
 ### DEPLOY AND VALIDATE
+
+There was no need to deploy nor validate functions, methods nor algorithms for this project.
