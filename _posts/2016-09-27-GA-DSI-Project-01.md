@@ -16,11 +16,14 @@ The project this week was meant as an introduction to Python data analysis and v
 *   perform simple descriptive statistics on the data (min, max, mean, median, standard deviation)
 *   create scatterplots, histograms, box plots and heatmaps with MatPlotLib, PyPlot, Seaborn and Tableau to visualize the data
 
-*Note: The methodology below is drawn from the "Data Science Workflow" document provided by General Assembly
+**Note: The methodology below is drawn from the "Data Science Workflow" document provided by General Assembly**
 
 ### IDENTIFY THE PROBLEM
+
 ### ACQUIRE THE DATA
+
 ### PARSE THE DATA
+
 ### MINE THE DATA
 
 
