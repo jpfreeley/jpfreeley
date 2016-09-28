@@ -21,9 +21,9 @@ Unordered (bulleted) lists use asterisks, pluses, and hyphens (*, +, and -) as l
 *   Booze.
 this:
 
-+   Candy.
-+   Gum.
-+   Booze.
++ Candy
++ Gum
++ Booze
 and this:
 
 -   Candy.
