@@ -49,7 +49,7 @@ A larger dataset was found which included over 300,000 rows of data spanning all
 A full description of the dataset can be found below.
 
 -	Name: all_billboard_data.txt
--	Delimiter: "|"
+-	Delimiter: "\|"
 -	Records: 343545
 -	Sources: web scraped from [the ultimate music database](http://www.umdmusic.com/default.asp?Lang=English&Chart=D)
 -	Previously used: [Modest Insights - Analyzing the Billboard Hot 100](http://www.modestinsights.com/analyzing-the-billboard-hot-100/)
@@ -70,7 +70,7 @@ A full description of the dataset can be found below.
 
 Due to the issues noted above with regard to the different historical policies of Billboard's data collection, it was determined that we should concentrate on a relatively calm period of Billboard policy changes between Jan 1999 and December 2004. There had been a major change in policy in November 1998 and anothe major change in February 2005.
 
-Using the pandas library of Python, the data was imported as a csv using the "|" delimiter. The data was manipulated to change the Excel Formatted date in "chart entry date" column to become "chart.entered.date", a datetime field. From that 2 other fields were derived "chart.entered.month" and "chart.entered.year".
+Using the pandas library of Python, the data was imported as a csv using the "\|" delimiter. The data was manipulated to change the Excel Formatted date in "chart entry date" column to become "chart.entered.date", a datetime field. From that 2 other fields were derived "chart.entered.month" and "chart.entered.year".
 
 As noted above, because individual songs were recorded for each week they appeared on the charts, we "flattened" the data using a pivot table and the MAXimum of "overall weeks on chart".
 
