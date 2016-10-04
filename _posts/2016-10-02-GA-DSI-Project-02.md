@@ -21,7 +21,7 @@ Specifically the project required me to:
 -	utilize visual and statistical techniques to assert and test my hypothesis
 -	use new functionality of python including pd.apply{map}, pd.groupby, pd.pivot\_table, scipy.ttest
 
-[Project 1 Jupyter Notebook](https://github.com/jpfreeley/DSI-NYC-2/blob/master/projects/projects-weekly/project-01/starter-code/JPF_project_1.ipynb)
+[Project 2 Jupyter Notebook](https://github.com/jpfreeley/DSI-NYC-2/blob/master/projects/projects-weekly/project-02/JPF_project_2.ipynb)
 
 **Note:** The methodology below is drawn from the "Data Science Workflow" document provided by General Assembly
 
