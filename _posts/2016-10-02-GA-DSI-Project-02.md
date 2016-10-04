@@ -30,13 +30,13 @@ IDENTIFY THE PROBLEM
 
 **NULL-HYPOTHESIS:**
 
-*Between Jan 1999 and December 2004, the mean of the overall weeks for a song to appear on the Hot100 list which Debuts on the list in the month of June is no different than the mean of a song which debuts in any other month.*
+*Between Jan 1999 and December 2004, the mean of the overall weeks (lifetime) for a song to appear on the Hot100 list which Debuts on the list in the month of **June** is no different than the mean lifetime of a song which debuts in any other month.*
 
 **Risks and Assumptions**
 
-The Hot100 Billboard Charts data is notoriously wrought with problems. Throughout it's history, Billboard has changed their policies regarding both the way they collect the information as well as which information they are collecting.
+The methodology of Hot100 Billboard Charts data is notoriously wrought with problems. Throughout it's history, Billboard has changed their policies regarding both the way they collect the information as well as which information they are collecting.
 
-At some points in history they have collected the sales of Singles, then sales of Albums, then sales of downloads. Additionally, they collect data on how often a song is played on the radio. Most recently, they have made adjustments to account for streaming music. [Wikipedia](https://en.wikipedia.org/wiki/Billboard_Hot_100) and [other](https://theringer.com/billboard-hot-100-singles-chart-broken-313cbe9094b9#.oznojthyp) [sources](http://www.npr.org/sections/therecord/2013/08/16/207879695/how-the-hot-100-became-americas-hit-barometer) discuss the inherent fragility of the data in more depth.
+At some points in history they have collected the sales of Singles, then sales of Albums, then sales of downloads. Additionally, they collect data on how often a song is played on the radio (airplays). Most recently, they have made adjustments to account for streaming music. [Wikipedia](https://en.wikipedia.org/wiki/Billboard_Hot_100) and [other](https://theringer.com/billboard-hot-100-singles-chart-broken-313cbe9094b9#.oznojthyp) online  [sources](http://www.npr.org/sections/therecord/2013/08/16/207879695/how-the-hot-100-became-americas-hit-barometer) discuss the inherent fragility of the data in more depth.
 
 Needless to say, exactly what data you are analyzing has much to do with the period of time the data represents.
 
@@ -44,14 +44,14 @@ Needless to say, exactly what data you are analyzing has much to do with the per
 
 The dataset which was originally presented consisted of 317 rows of data from the year 2000. After some exploratory data analysis, it was determined that the sample was too small for adequately testing the hypothesis.
 
-A larger dataset was found which included over 300,000 rows of data spanning all years of the Billboard Hot 100 charts. The dataset is available [here](http://www.modestinsights.com/wp-content/uploads/2015/03/all_billboard_data.txt) in Pipe Separated Format (PSV). The important thing to note for this new dataset was that song titles were repeated rows for each week that they were on the charts. Therefore, a pivot table was used to flatten the repeated rows to 1 record per song. In addition, there were some songs which had slight variations in their titles and therefore were counted multiple times in the dataset.
+A larger dataset was found which included over 300,000 rows of data spanning all years of the Billboard Hot 100 charts. The dataset is available [here](http://www.modestinsights.com/wp-content/uploads/2015/03/all_billboard_data.txt) in Pipe Separated Format (PSV). The important thing to note for this new dataset was that song titles were repeated rows for each week that they were on the charts. Therefore, a pivot table was used to flatten the repeated rows to 1 record per song using MAXimum 'overall weeks on chart'. In addition, there were some songs which had slight variations in their titles and therefore were counted multiple times in the dataset.
 
 A full description of the dataset can be found below.
 
 -	Name: all_billboard_data.txt
 -	Delimiter: "\|"
 -	Records: 343545
--	Sources: web scraped from [the ultimate music database](http://www.umdmusic.com/default.asp?Lang=English&Chart=D)
+-	Sources: web scraped by [Michael Kling][7c9ad3db] from [the ultimate music database](http://www.umdmusic.com/default.asp?Lang=English&Chart=D)
 -	Previously used: [Modest Insights - Analyzing the Billboard Hot 100](http://www.modestinsights.com/analyzing-the-billboard-hot-100/)
 -	Columns:
 	-	**pos** - current position on chart - integer
@@ -66,15 +66,17 @@ A full description of the dataset can be found below.
 	-	**overall weeks on chart** - total lifetime weeks on chart - integer
 	-	**chart date** - date of this chart's week - YYYYMMDD
 
+  [7c9ad3db]: http://www.modestinsights.com/author/mwklinggmail-com/ "Michael Kling"
+
 ### PARSE THE DATA
 
-Due to the issues noted above with regard to the different historical policies of Billboard's data collection, it was determined that we should concentrate on a relatively calm period of Billboard policy changes between Jan 1999 and December 2004. There had been a major change in policy in November 1998 and anothe major change in February 2005.
+Due to the issues noted above with regard to the different historical policies of Billboard's data collection, it was determined that we should concentrate on a relatively calm period of Billboard policy changes between January 1999 and December 2004. There had been a major change in policy in November 1998 and another major change in February 2005.
 
-Using the pandas library of Python, the data was imported as a csv using the "\|" delimiter. The data was manipulated to change the Excel Formatted date in "chart entry date" column to become "chart.entered.date", a datetime field. From that 2 other fields were derived "chart.entered.month" and "chart.entered.year".
+Using the **pandas** library of Python, the data was imported as a csv using the "\|" delimiter. The data was manipulated to change the Excel Formatted date in "chart entry date" column to become "chart.entered.date", a datetime field. From that field, 2 other fields were derived "chart.entered.month" and "chart.entered.year".
 
-As noted above, because individual songs were recorded for each week they appeared on the charts, we "flattened" the data using a pivot table and the MAXimum of "overall weeks on chart".
+As noted above, because individual songs were recorded for each week they appeared on the charts, a **pivot table** was used to "flatten" the data using the the MAXimum of "overall weeks on chart".
 
-After selecting the subset of the years (1999 - 2004), and flattening the titles, we are left with 2038 records and 5 columns of interest (level_0, title, chart.enter.month, chart.enter.year, overall weeks on chart)
+After selecting the subset of the years (1999 - 2004), and flattening the titles and dropping the resulting pivot table column (level_0), we are left with 2038 records and 4 columns of interest (title, chart.enter.month, chart.enter.year, overall weeks on chart)
 
 ### MINE THE DATA
 
