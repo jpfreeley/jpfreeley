@@ -80,7 +80,7 @@ After selecting the subset of the years (1999 - 2004), and flattening the titles
 
 ### MINE THE DATA
 
-![](/images/billboard_histograms.png)
+![](/images/project-02/billboard_histograms.png)
 
 The data was statistically described using mean, standard deviation, minimum and maximum for each of the numeric columns of the dataset.
 

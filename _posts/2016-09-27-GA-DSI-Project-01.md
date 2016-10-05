@@ -1,20 +1,20 @@
 ---
-layout:     post
-title:      Project 1 - 2001 SAT Scores
-date:       2016-09-27 23:00:00
-summary:    Overview and description of my introductory Data Science Immersive project
+
+layout: post title: Project 1 - 2001 SAT Scores date: 2016-09-27 23:00:00 summary: Overview and description of my introductory Data Science Immersive project
+
 categories: project dsi python
----
+------------------------------
 
 Week 1 Project Overview
----------------------
+-----------------------
+
 The project this week was meant as an introduction to Python data analysis and visualization. It required me to:
 
-*   create several different Python list [] and dictionary {} data structures
-*   manipulate Python dictionaries using "list comprehensions", unpacking and "for loops"
-*   slice and select subsets of the full data set
-*   perform simple descriptive statistics on the data (min, max, mean, median, standard deviation)
-*   create scatterplots, histograms, box plots and heatmaps with MatPlotLib, PyPlot, Seaborn and Tableau to visualize the data
+-	create several different Python list [] and dictionary {} data structures
+-	manipulate Python dictionaries using "list comprehensions", unpacking and "for loops"
+-	slice and select subsets of the full data set
+-	perform simple descriptive statistics on the data (min, max, mean, median, standard deviation)
+-	create scatterplots, histograms, box plots and heatmaps with MatPlotLib, PyPlot, Seaborn and Tableau to visualize the data
 
 [Project 1 Jupyter Notebook](https://github.com/jpfreeley/DSI-NYC-2/blob/master/projects/projects-weekly/project-01/starter-code/JPF_project_1.ipynb)
 
@@ -26,19 +26,9 @@ The College Board would like to analyze the State based data of the 2001 SAT sco
 
 ### ACQUIRE THE DATA
 
-The data as provided to us as a csv file.
-It is 4 columns wide by 53 rows (including header labels and national averages). The data dictionary begins.
+The data as provided to us as a csv file. It is 4 columns wide by 53 rows (including header labels and national averages). The data dictionary begins.
 
-"sat_scores.csv"
-_The data is delimited with commas_
-The data was clean but needs to have some fields types recast
-<br>1 header row of the following values: *State, Rate, Verbal, Math*
-<br>*State* -- string, State of the testing
-<br>*Rate* -- float, percentage of participation for that 'state'
-<br>*Verbal* -- float, Average value of Verbal Score within that State
-<br>*Math* -- float, Average value of Math score within that State
-<br><br>*NOTE1:* there is also a 'summary' row denoted by "All" in the State column which represents the national averages
-<br>*NOTE2:* Washington, DC is treated as a "State"
+"sat*scores.csv"_The data is delimited with commas* The data was clean but needs to have some fields types recast<br>1 header row of the following values: *State, Rate, Verbal, Math*<br>*State* -- string, State of the testing<br>*Rate* -- float, percentage of participation for that 'state'<br>*Verbal* -- float, Average value of Verbal Score within that State<br>*Math* -- float, Average value of Math score within that State<br><br>*NOTE1:* there is also a 'summary' row denoted by "All" in the State column which represents the national averages<br>*NOTE2:* Washington, DC is treated as a "State"
 
 ### PARSE THE DATA
 
@@ -60,8 +50,7 @@ There was no need to build a data model for this project.
 
 Description of results forthcoming.
 
-![](/images/scatterplots.png)
-![](/images/boxplots.png)
+![](/images/project-01/scatterplots.png) ![](/images/project-01/boxplots.png)
 
 ### DEPLOY AND VALIDATE
 
