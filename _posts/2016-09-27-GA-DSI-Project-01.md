@@ -1,9 +1,10 @@
 ---
-
-layout: post title: Project 1 - 2001 SAT Scores date: 2016-09-27 23:00:00 summary: Overview and description of my introductory Data Science Immersive project
-
+layout: post
+title: Project 1 - 2001 SAT Scores
+date: 2016-09-27 23:00:00
+summary: Overview and description of my introductory Data Science Immersive project
 categories: project dsi python
-------------------------------
+---
 
 Week 1 Project Overview
 -----------------------
