@@ -99,6 +99,10 @@ There was no need to build a data model for this project.
 ![](/images/project-02/box_mean.png)
 ![](/images/project-02/tab_stats.png)
 
+The NULL-HYPOTHESIS is that a Song which Debuts in June has no extra staying power over a song which debuts in a different month.
+
+Based on the above calculations, this should be apparent. The difference between the means = 0.75. We ran a ttest_ind calculation which confirms that we may not reject the NULL-HYPOTHESIS because it's value is .
+
 ### DEPLOY AND VALIDATE
 
 There was no need to deploy nor validate functions, methods nor algorithms for this project.
