@@ -93,10 +93,11 @@ The data provided did not require further refinement
 There was no need to build a data model for this project.
 
 ### PRESENT RESULTS
-
-Description of results forthcoming.
-
-![](/images/scatterplots.png) ![](/images/boxplots.png)
+![](/images/project-02/weeks_month_entered.png)
+![](/images/project-02/avgweeks_month_entered.png)
+![](/images/project-02/p_val_stats.png)
+![](/images/project-02/box_mean.png)
+![](/images/project-02/tab_stats.png)
 
 ### DEPLOY AND VALIDATE
 
