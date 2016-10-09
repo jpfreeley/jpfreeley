@@ -22,18 +22,18 @@ categories: cheat sheets dsi python datasets munging cleaning
 [daa8bf2e]: http://stationinthemetro.com/wp-content/uploads/2013/04/Markdown_Cheat_Sheet_v1-1.pdf "Markdown Cheat Sheet"
 [765375b7]: /pdfs/DataEx_using_Pandas.pdf "Data Exploration using Pandas"
 [bf644cd9]: https://github.com/ben519/DataWrangling/blob/master/Python/README.md "Data Wrangling"
-
-  [a0bc03de]: https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf "Plotly Cheat Sheet"
-  [5ef6cdbd]: https://www.analyticsvidhya.com/wp-content/uploads/2016/08/Data-Exploration-in-Python.pdf "Data Exploration in Python"
-  [61282ec4]: https://drive.google.com/drive/u/1/folders/0ByIrJAE4KMTtaGhRcXkxNHhmY2M "{'Very comprehensive Cheat Sheets': [‘Python’. 'Matplotlib’. 'Pandas’]}"
-  [eb21dd19]: http://www.rapidtables.com/math/symbols/Statistical_Symbols.htm "Greek Stats Symbols"
-  [e85fc1d2]: http://devzum.com/2015/06/best-machine-learning-cheat-sheets/ "Machine Learning Cheat Sheet"
-  [46009404]: https://www.cs.utexas.edu/~pingali/CS395T/2013fa/lectures/inderjit-day1.pdf "Day1"
-  [25db89c5]: https://www.cs.utexas.edu/~pingali/CS395T/2013fa/lectures/inderjit-day2.pdf "Day2"
+[a0bc03de]: https://images.plot.ly/plotly-documentation/images/python_cheat_sheet.pdf "Plotly Cheat Sheet"
+[5ef6cdbd]: https://www.analyticsvidhya.com/wp-content/uploads/2016/08/Data-Exploration-in-Python.pdf "Data Exploration in Python"
+[61282ec4]: https://drive.google.com/drive/u/1/folders/0ByIrJAE4KMTtaGhRcXkxNHhmY2M "{'Very comprehensive Cheat Sheets': [‘Python’. 'Matplotlib’. 'Pandas’]}"
+[eb21dd19]: http://www.rapidtables.com/math/symbols/Statistical_Symbols.htm "Greek Stats Symbols"
+[e85fc1d2]: http://devzum.com/2015/06/best-machine-learning-cheat-sheets/ "Machine Learning Cheat Sheet"
+[46009404]: https://www.cs.utexas.edu/~pingali/CS395T/2013fa/lectures/inderjit-day1.pdf "Day1"
+[25db89c5]: https://www.cs.utexas.edu/~pingali/CS395T/2013fa/lectures/inderjit-day2.pdf "Day2"
 
 ### Data Visualization
 + [15 Data Visualizations that will Blow Your Mind][ec8ae7c9]
 + [FlowingData Data Visualizations][0f8cc95c]
+
 [0f8cc95c]: http://flowingdata.com/ "FlowingData Data Visualizations"
 [ec8ae7c9]: http://blog.udacity.com/2015/01/15-data-visualizations-will-blow-mind.html "15 Data Visualizations that will Blow Your Mind"
 
