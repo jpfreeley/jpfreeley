@@ -43,6 +43,7 @@ categories: cheat sheets dsi python datasets munging cleaning
 + [Kaggle][56bee817]
 + [20 Big Data Datasets everyone should know about][8ae7b356]
 + [Data.Gov][fa181133]
+
 [56bee817]:https://www.kaggle.com/datasets "Kaggle"
 [4795b88c]:https://github.com/caesar0301/awesome-public-datasets "Awesome Public Datasets"
 [f6738410]:https://github.com/fivethirtyeight/data "538 Data on Github"
@@ -54,8 +55,8 @@ categories: cheat sheets dsi python datasets munging cleaning
 + [Another Repository Like This][61b998a9]
 + [Data Science Salaries 2016][1f65aa36]
 + [The "Saturn" Graph][57e0564d]
+
 [6e1ab8cc]: /pdfs/installfest_readme.pdf "GA-DSI-INSTALLFEST"
 [61b998a9]: https://www.analyticsvidhya.com/blog/2016/09/most-active-data-scientists-free-books-notebooks-tutorials-on-github/ "Another Repository Like This"
-
-  [1f65aa36]: http://www.burtchworks.com/files/2016/04/Burtch-Works-Study_DS-2016-webinar-to-share.pdf "Data Science Salaries 2016"
-  [57e0564d]: http://i.imgur.com/CkRe7Ru.png "The "Saturn" Graph"
+[1f65aa36]: http://www.burtchworks.com/files/2016/04/Burtch-Works-Study_DS-2016-webinar-to-share.pdf "Data Science Salaries 2016"
+[57e0564d]: http://i.imgur.com/CkRe7Ru.png "The "Saturn" Graph"
