@@ -17,6 +17,7 @@ categories: cheat sheets dsi python datasets munging cleaning
 + [Greek Stats Symbols][eb21dd19]
 + [Machine Learning Cheat Sheet][e85fc1d2]
 + Machine Learning: Think Big and Parallel ([Day1][46009404]) ([Day2][25db89c5])
+
 [5b59dee3]: https://www.git-tower.com/blog/git-cheat-sheet/ "Git Cheat Sheet"
 [daa8bf2e]: http://stationinthemetro.com/wp-content/uploads/2013/04/Markdown_Cheat_Sheet_v1-1.pdf "Markdown Cheat Sheet"
 [765375b7]: /pdfs/DataEx_using_Pandas.pdf "Data Exploration using Pandas"
