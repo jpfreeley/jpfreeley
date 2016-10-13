@@ -60,3 +60,8 @@ categories: cheat sheets dsi python datasets munging cleaning
 [61b998a9]: https://www.analyticsvidhya.com/blog/2016/09/most-active-data-scientists-free-books-notebooks-tutorials-on-github/ "Another Repository Like This"
 [1f65aa36]: http://www.burtchworks.com/files/2016/04/Burtch-Works-Study_DS-2016-webinar-to-share.pdf "Data Science Salaries 2016"
 [57e0564d]: http://i.imgur.com/CkRe7Ru.png "The "Saturn" Graph"
+
+### Books
++ [Introduction to Statistical Learning - Hastie/Tibshirani](https://www.amazon.com/gp/product/1461471370/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1)
++ [Speech and Language Processing - Jurafsky/Martin](https://www.amazon.com/gp/product/0131873210/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
++ [Introduction to Algorithms](https://www.amazon.com/gp/product/B00BG75ETI/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1) 
