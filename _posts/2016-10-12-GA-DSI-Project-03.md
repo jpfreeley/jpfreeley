@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Project 2 - Music Industry Data - Billboard Hot100 Chart
-date: 2016-10-02 23:00:00
+title: Project 3 - J3 Consultancy - Iowa Liquor Store Expansion
+date: 2016-10-12 02:30:00
 summary: Overview and description of my introductory Data Science Immersive project
-categories: project dsi python eda munging cleaning Billboard
+categories: project dsi python eda munging cleaning Iowa Liquor liner model Lasso regression
 ---
 
 Week 3 Project Overview
@@ -97,17 +97,17 @@ In order to obtain model to predict the 2 targets above, we utilized, exclusivel
 
 Before performing any aggregation or discarding any outliers, we took a snapshot to see which zip codes had the highest yearly total sales.
 
-![](../images/project-03/top_10_zips_before.png)
+![](/images/project-03/top_10_zips_before.png)
 
 Prior to performing significant modelling efforts, we needed to first perform a bit of cleanup and aggregation on the initial data.
 
 We noticed that there were a very small number of very large "distributer" stores. We recognized them as significant outliers and trimmed them by setting our threshold for exclusion to be any stores with greater than $100,000 in yearly sales. This threshold was arrived at by visual inspection of the following histogram.
 
-![](../images/project-03/distribution-of-store-sales-before.png)
+![](/images/project-03/distribution-of-store-sales-before.png)
 
 Once we had trimmed outlier stores we still had a skewed distribution, however, we were comfortable with the 1 order of magnitude shorter tail. (see below)
 
-![](../images/project-03/distribution-store-sales.png)
+![](/images/project-03/distribution-store-sales.png)
 
 After the elimination of the outlier stores, we went on to aggregate total sales and total volume on the zip code level for all stores. As noted above, these would be our targets for our model.
 
@@ -121,19 +121,19 @@ zip_aggs = ['Zip Sales - Total', 'Zip Volume - Total']
 
 We have now arrived at these Top performing Actual Zip Codes based on Total Yearly Sales:
 
-![](../images/project-03/top_10_zips_no_outs.png)
+![](/images/project-03/top_10_zips_no_outs.png)
 
 In an effort to understand how our demographic data may be correlated with our targets, we created a heat map for each. You should notice that they depict an nearly identical correlation map for both targets. This should be intuitive becuase Sales should be directly proportional to Volume sold.
 
 Sales  | Volume
 --|--
-![](../images/project-03/total_sales_heatmap.png)  |  ![](../images/project-03/total_volume_heatmap.png)
+![](/images/project-03/total_sales_heatmap.png)  |  ![](/images/project-03/total_volume_heatmap.png)
 
 When looking at the heatmaps while sorted by the correlation figure, a few unexpected features rise to the top. Namely, population of persons "<5 years old" and "# of owner-occupied housing units". While median household income seems to be very weakly correlated.
 
 Sales (Sorted)  | Volume (Sorted)
 --|--
-![](../images/project-03/total_sales_heatmap_sorted.png)  |  ![](../images/project-03/total_volume_heatmap_sorted.png)
+![](/images/project-03/total_sales_heatmap_sorted.png)  |  ![](/images/project-03/total_volume_heatmap_sorted.png)
 
 
 
@@ -172,7 +172,7 @@ print 'alpha applied: {}'.format(model_volume.alpha_)
 
 Sales  | Volume
 --|--
-![](../images/project-03/predictedVactualSales.png)  |  ![](../images/project-03/predictedVactualVolume.png)
+![](/images/project-03/predictedVactualSales.png)  |  ![](/images/project-03/predictedVactualVolume.png)
 - an r-squared value of: 0.816989065682 | - an r-squared value of: r-squared: 0.803698824346
 - an alpha applied value of: 3512.74084712 | - an alpha applied value of: 237.245609349
 
@@ -189,7 +189,7 @@ Rather than utilize a train-test-split or other method to extrapolate our predic
 
 Once we ran our models and found their predictions we again sourted our results by Total Yearly Sales with the expectation that based on the demographics of the zip code, these were the strongest contenders for opening future stores.
 
-![](../images/project-03/final_results.png)
+![](/images/project-03/final_results.png)
 
 Several of our predicted zip codes duplicated zip codes which we found earlier in this write up, however a few new zip codes have emerged: 52001, 52302, 50265, 50322, 50315, 50021, 52402
 
@@ -197,7 +197,7 @@ According to the mode's predictions, based on the zip code's demographic charact
 
 On the map below are the top 10 zip codes which represent the places which our model predicts the highest Total Yearly Sales. It is showing the details for the highest rated zip code, 50317
 
-![](../images/project-03/Lasso Zips Top 10 Detail for nmbr1.png)
+![](/images/project-03/Lasso Zips Top 10 Detail for nmbr1.png)
 
 ### FURTHER WORK
 
@@ -217,4 +217,4 @@ There are many ways to approach the problem of recommending locations for expans
 
 These are the some of the big questions which facethe Data Scientist. To be able to see the various angles, understand the relationships, consider the implications of their decisions. They need to be able to support and defend their approach. They need to create a method which can be tweaked, tuned and reproduced.
 
-These are the struggles. These are a few of the driving forces behind my interest in becoming a productive member of the Data Science community. 
+These are the struggles. These are a few of the driving forces behind my interest in becoming a productive member of the Data Science community.
