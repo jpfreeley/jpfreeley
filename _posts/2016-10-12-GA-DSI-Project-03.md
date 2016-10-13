@@ -23,14 +23,12 @@ Specifically the project required us to:
 -	utilize visual and statistical to present our recommendations
 -	use new statistical tools and functions such as RidgeCV, LassoCV for modelling predictive values based on provided features
 
-[Project 3 Jupyter Notebook - Group Submission](https://github.com/jpfreeley/DSI-NYC-2/blob/master/projects/projects-weekly/project-02/JPF_project_2.ipynb)
+[Project 3 Jupyter Notebook - Group Submission](https://github.com/jpfreeley/GA-DSI/blob/master/DSI_IMAGE/projects/projects-weekly/project-03/starter-code/notebooks/project-3-jp-joshua-jocelyn-lasso_101216_2026.ipynb)
 
 **Note:** The methodology below is drawn from the "Data Science Workflow" document provided by General Assembly
 
 IDENTIFY THE PROBLEM
 ====================
-
-**NULL-HYPOTHESIS:**
 
 *We've been tasked with making recommendations on where to open new liquor stores in the state of Iowa based on a dataset of the Iowa State Liquor Authority acting as a "Wholesaler" from 2015*
 
