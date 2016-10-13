@@ -19,9 +19,9 @@ Specifically the project required us to:
 -	work towards the goal of recommending potential locations for Liquor Stores in the state
 -	clean the data, as necessary
 -	consider the introduction of supporting datasets such as Demographics
--	develop a reproducable method supported by sound practices for making location recommendations
+-	develop a reproducible method supported by sound practices for making location recommendations
 -	utilize visual and statistical to present our recommendations
--	use new statistical tools and functions such as RidgeCV, LassoCV for modelling predictive values based on provided features
+-	use new statistical tools and functions such as RidgeCV, LassoCV for modeling predictive values based on provided features
 
 [Project 3 Jupyter Notebook - Group Submission](https://github.com/jpfreeley/GA-DSI/blob/master/DSI_IMAGE/projects/projects-weekly/project-03/starter-code/notebooks/project-3-jp-joshua-jocelyn-lasso_101216_2026.ipynb)
 
@@ -57,14 +57,14 @@ A full description of the liquor dataset can be found below.
 -	Columns:
 -
 	-	**Date** - unique row ID - integer
-	-	**Store Number** - uniqe ID for liquor store - integer
+	-	**Store Number** - unique ID for liquor store - integer
 	-	**City** -  city in which store located - string
 	-	**Zip Code** - zip code in which store located - string
 	-	**County Number** - IOWA county number in which store located - integer
 	-	**County** - IOWA county name in which store located - string
 	-	**Category** - numerical category for liquor type - integer
 	-	**Category Name** - text name for liquor type - string
-	-	**Vendor Number** - unique id for suppier to state - integer
+	-	**Vendor Number** - unique id for supplier to state - integer
 	-	**Item Number** - unique id for actual product sku - integer
 	-	**Bottle Volume (ml)** - size in ml of bottle - integer
 	- **State Bottle Cost** - cost from the supplier to the state - float
@@ -80,9 +80,9 @@ Although data was available to us for years from 2012-2016, we focused only on t
 
 We read the liquor sales data in with python pandas library from a csv file. The csv file we were presented was cleaned somewhat from the source files at data.iowa.gov. Specifically, they had the "Store Location" field dropped. The "Store Location" field contained \n linebreaks which may have led to undesirable parsing results.
 
-We compiled from a [few](http://www.unitedstateszipcodes.org/zip-code-database/) [other](http://www.iowayouthsurvey.iowa.gov/images/iacountiesnumbers.pdf) [sources](https://www.census.gov/geo/maps-data/data/tiger-line.html) a master lookup reference of ZIP, COUNTY, COUNTY#, CITY, ZIP-AREA-SQKM which we used to join against our liquor database and fill in any erroneuous or missing data for those liquor fields.
+We compiled from a [few](http://www.unitedstateszipcodes.org/zip-code-database/) [other](http://www.iowayouthsurvey.iowa.gov/images/iacountiesnumbers.pdf) [sources](https://www.census.gov/geo/maps-data/data/tiger-line.html) a master lookup reference of ZIP, COUNTY, COUNTY#, CITY, ZIP-AREA-SQKM which we used to join against our liquor database and fill in any erroneous or missing data for those liquor fields.
 
-This master zip-code-database file also contained the geographic area for the particular zip code in units of square meters. We did not that there are now more zip codes in the state than we had unique georgraphic area for. It seems that some larger zip codes were split into 1 or more smaller zip codes sometime since the area data was compiled. This should not affect our model since we are using the geographic area simply as a point of information in our results and not as an input to our model.
+This master zip-code-database file also contained the geographic area for the particular zip code in units of square meters. We did not that there are now more zip codes in the state than we had unique geographic area for. It seems that some larger zip codes were split into 1 or more smaller zip codes sometime since the area data was compiled. This should not affect our model since we are using the geographic area simply as a point of information in our results and not as an input to our model.
 
 ### MINE THE DATA
 
@@ -97,7 +97,7 @@ Before performing any aggregation or discarding any outliers, we took a snapshot
 
 ![](/images/project-03/top_10_zips_before.png)
 
-Prior to performing significant modelling efforts, we needed to first perform a bit of cleanup and aggregation on the initial data.
+Prior to performing significant modeling efforts, we needed to first perform a bit of cleanup and aggregation on the initial data.
 
 We noticed that there were a very small number of very large "distributer" stores. We recognized them as significant outliers and trimmed them by setting our threshold for exclusion to be any stores with greater than $100,000 in yearly sales. This threshold was arrived at by visual inspection of the following histogram.
 
@@ -121,7 +121,7 @@ We have now arrived at these Top performing Actual Zip Codes based on Total Year
 
 ![](/images/project-03/top_10_zips_no_outs.png)
 
-In an effort to understand how our demographic data may be correlated with our targets, we created a heat map for each. You should notice that they depict an nearly identical correlation map for both targets. This should be intuitive becuase Sales should be directly proportional to Volume sold.
+In an effort to understand how our demographic data may be correlated with our targets, we created a heat map for each. You should notice that they depict an nearly identical correlation map for both targets. This should be intuitive because Sales should be directly proportional to Volume sold.
 
 Sales  | Volume
 --|--
@@ -185,7 +185,7 @@ As you can see from the plots above, our model does a fairly decent job of predi
 
 Rather than utilize a train-test-split or other method to extrapolate our predictions, we felt that the best idea would be to consider the zipcodes that had at least 1 store in them (n=362) vs. the zipcodes that had 0 stores in them (n=459). In doing so, we are now running our model against zipcodes that can be characterized by the demographic data but do not yet contain a liquor store.
 
-Once we ran our models and found their predictions we again sourted our results by Total Yearly Sales with the expectation that based on the demographics of the zip code, these were the strongest contenders for opening future stores.
+Once we ran our models and found their predictions we again sorted our results by Total Yearly Sales with the expectation that based on the demographics of the zip code, these were the strongest contenders for opening future stores.
 
 ![](/images/project-03/final_results.png)
 
@@ -199,9 +199,9 @@ On the map below are the top 10 zip codes which represent the places which our m
 
 ### FURTHER WORK
 
-The budget for our data acquisition did not allow us to obtain demographic data newer than the 2000 census, we would highily recommend that more current data be sought to perhaps more accurately reflect current demographic characteristics.
+The budget for our data acquisition did not allow us to obtain demographic data newer than the 2000 census, we would highly recommend that more current data be sought to perhaps more accurately reflect current demographic characteristics.
 
-There were a few other questions which arose from the project. We struggled with the fact that our model predicted negative total sales and volume and we'd like to futher invesitgate why that is.
+There were a few other questions which arose from the project. We struggled with the fact that our model predicted negative total sales and volume and we'd like to further investigate why that is.
 
 In addition, we'd like to better understand the actual price to the consumer at each store to better understand where the most PROFITABLE stores are located, not simply the stores that are spending the most on purchasing inventory (which is essentially what we've done).
 
@@ -213,6 +213,6 @@ Can we geocode the stores to a more granular scale and consider the actual comme
 
 There are many ways to approach the problem of recommending locations for expansion. Certainly there are professional consultant teams with the sole responsibility of doing this type of analysis for corporate expansion. We chose an approach that made sense to us given the data available. We feel confident that there are some valid results which can be drawn from our decisions. But we are also aware that there may be certain aspects and variables which we didn't consider or things that we did include that we shouldn't have.
 
-These are the some of the big questions which facethe Data Scientist. To be able to see the various angles, understand the relationships, consider the implications of their decisions. They need to be able to support and defend their approach. They need to create a method which can be tweaked, tuned and reproduced.
+These are the some of the big questions which face the Data Scientist. To be able to see the various angles, understand the relationships, consider the implications of their decisions. They need to be able to support and defend their approach. They need to create a method which can be tweaked, tuned and reproduced.
 
 These are the struggles. These are a few of the driving forces behind my interest in becoming a productive member of the Data Science community.
