@@ -62,6 +62,7 @@ categories: cheat sheets dsi python datasets munging cleaning
 [57e0564d]: http://i.imgur.com/CkRe7Ru.png "The "Saturn" Graph"
 
 ### Books
-+ [Introduction to Statistical Learning - Hastie/Tibshirani](https://www.amazon.com/gp/product/1461471370/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1)
-+ [Speech and Language Processing - Jurafsky/Martin](https://www.amazon.com/gp/product/0131873210/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
-+ [Introduction to Algorithms](https://www.amazon.com/gp/product/B00BG75ETI/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1) 
++ [Introduction to Statistical Learning - Hastie/Tibshirani](https://www.amazon.com/gp/product/1461471370/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) - [Online Course](https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/info)
++ [Speech and Language Processing - Jurafsky/Martin](https://www.amazon.com/gp/product/0131873210/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1) -
++ [Introduction to Algorithms - Cormen](https://www.amazon.com/gp/product/B00BG75ETI/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
++ [Web Scraping with Python: Collecting Data from the Modern Web](https://www.amazon.com/Web-Scraping-Python-Collecting-Modern/dp/1491910291)
