@@ -1,29 +1,30 @@
 ---
 layout: post
-title: Project 3 - J3 Consultancy - Iowa Liquor Store Expansion
-date: 2016-10-12 02:30:00
+title: Project 4 - Fantasitc 4 Consultancy - Predicting Data Scientist Salaries via Web Scraping
+date: 2016-10-19 02:30:00
 summary: Overview and description of my introductory Data Science Immersive project
 categories: project dsi python eda munging cleaning Iowa Liquor liner model Lasso regression
 ---
 
-Week 3 Project Overview
+Week 4 Project Overview
 -----------------------
 
-This week's assignment was a group effort with 2 other classmates, Jocelyn and Joshua.
+This week's assignment was a group effort with 3 other classmates, Amish, Jesse and Kristen.
 
-The project was designed to build upon our existing proficiency with Data Wrangling using Python pandas library  and fortify our statistical fundamentals including Linear Regressions and Cross Validation using different Linear Models.
+The project was designed to determine the factors which contribute to salaries of Data Scientists being either above the median of all salaries or below. Utilizing web scraping techniques and Logistic Regression (Classification).
 
 Specifically the project required us to:
 
--	explore a large public governmental dataset of Liquor Sales in Iowa for 2015
--	work towards the goal of recommending potential locations for Liquor Stores in the state
+-	identify public web sources for job listings with Salary data.
+-	obtain, via Web Scraping, enough data and features to perform statistical tests
 -	clean the data, as necessary
--	consider the introduction of supporting datasets such as Demographics
--	develop a reproducible method supported by sound practices for making location recommendations
--	utilize visual and statistical to present our recommendations
--	use new statistical tools and functions such as RidgeCV, LassoCV for modeling predictive values based on provided features
+-	develop a reproducible method supported by sound practices for making statements about what features are most influential in position salaries
+-	utilize visual and statistical tools to present our recommendations
+-	use new statistical tools and functions such as KNeighborsClassifier, GridSearchCV, selenium/phantomJS web tools, LogisticRegression
 
-[Project 3 Jupyter Notebook - Group Submission](https://github.com/jpfreeley/GA-DSI/blob/master/DSI_IMAGE/projects/projects-weekly/project-03/starter-code/notebooks/project-3-jp-joshua-jocelyn-lasso_101216_2026.ipynb)
+[Project 4 Jupyter Notebook - Group Submission](https://github.com/jpfreeley/GA-DSI/blob/master/DSI_IMAGE/curriculum/week-04/4.1-lab-webscraping/scraping-project-4-starter_JPF-Amish.ipynb)
+
+
 
 **Note:** The methodology below is drawn from the "Data Science Workflow" document provided by General Assembly
 
