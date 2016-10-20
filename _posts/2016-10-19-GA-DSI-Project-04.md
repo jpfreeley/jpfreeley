@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Project 4 - Fantasitc 4 Consultancy - Predicting Data Scientist Salaries via Web Scraping
+title: Project 4 - Fantastic 4 Consultancy - Predicting Data Scientist Salaries via Web Scraping
 date: 2016-10-19 02:30:00
 summary: Overview and description of my introductory Data Science Immersive project
-categories: project dsi python eda munging cleaning Iowa Liquor liner model Lasso regression
+categories: project dsi python eda web scraping LogisticRegression salary glassdoor
 ---
 
 Week 4 Project Overview
@@ -22,119 +22,64 @@ Specifically the project required us to:
 -	utilize visual and statistical tools to present our recommendations
 -	use new statistical tools and functions such as KNeighborsClassifier, GridSearchCV, selenium/phantomJS web tools, LogisticRegression
 
-[Project 4 Jupyter Notebook - Group Submission](https://github.com/jpfreeley/GA-DSI/blob/master/DSI_IMAGE/curriculum/week-04/4.1-lab-webscraping/scraping-project-4-starter_JPF-Amish.ipynb)
-
-
+[Project 4 Jupyter Notebook - Group Submission](https://github.com/jpfreeley/GA-DSI/blob/master/DSI_IMAGE/curriculum/week-04/4.1-lab-webscraping/scraping-project-4-starter_JPF-Jesse.ipynb)
 
 **Note:** The methodology below is drawn from the "Data Science Workflow" document provided by General Assembly
 
 IDENTIFY THE PROBLEM
 ====================
 
-*We've been tasked with making recommendations on where to open new liquor stores in the state of Iowa based on a dataset of the Iowa State Liquor Authority acting as a "Wholesaler" from 2015*
+*We've been asked to determine which parts of a job description are most influential in determining the salary of a Data Science "flavored" position. Because it is known that several job titles overlap in the Data Science industry, we must be wary of these subtleties*
 
 **Risks and Assumptions**
 
-It was determined early on that the data presented did not represent consumer retail sales, but rather sales from the State to the Liquor Stores. Therefore, we could not directly infer any profitability at the store level directly.
+It was clear that obtaining a large dataset which contained salary information was going to be a challenge. By 1st scraping the indeed.com website, we got a sense that about 4% of job descriptions contained some indicator of salary.
 
-We made the assumption that the sales data was reasonably accurate as we had no way to independently audit the entries. We also assumed that the ZIP code for the stores was accurate, although we were able to catch several dozen obvious systemic errors, but the percentage was very small given that there 2.7-million records.
+We were also at the mercy of the indeed.com search algorithm to present us relevant search results. We also needed to assume that there were no gross typographical errors. We dd not have significant outliers.
 
-Because we had no information regarding the end user sale to the consumer, we made the assumption that every bottle purchased from the State was sold within a very short period of time.
-
-We added to the Liquor dataset, a dataset of 2010 demographic data obtained from the Iowa data website [here](http://www.iowadatacenter.org/browse/ZCTAs.html). We likewise assume that this data is generally accurate and that there are no gross errors on it's face. Of course, demographic data can be biased at the collection level.
+To supplement the indeed.com data, we also scraped historical salary information from glassdoor.com. This allowed us a baseline of Location and Title information along with salaries.
 
 ### ACQUIRE THE DATA
+We were successful in scraping job postings from indeed.com. We scraped up to 1000 listings for each of 39 cities. In the end we compiled nearly 27,000 listings, about 1000 of which contained salary data. With the following data for each:
 
-The 2015-2016 Iowa Liquor Sales database is available on the data.iowa.gov website [here](https://data.iowa.gov/Economy/Iowa-Liquor-Sales/m3tr-qhgy) . It consists of 2,709,552 records of transactions of sales which took place between the state of Iowa and individual liquor stores. In Iowa, the state itself acts as the wholesaler.
+Location of Job - string
+Title of Job - string
+Summary of Job description - string
+Job Posting Company - string
+JKID - unique indeed.com job identifier - string
+Number of "stars" for that Company - float 0-5 (0.5 increments)
+Number of reviews for the company - integer
+How many days ago the posting was created - float
+Date that the posting was scraped - datetime
+City that was used for the search - string
 
-The census-2000 demographic data which we incorporated was extensive and consisted of several different demographic segments including age, housing, income, race, and poverty level. All of which can be considered when determining a location for Liquor stores.
+From Glassdoor we obtained the following data for nearly 1400 records:
 
-A full description of the liquor dataset can be found below.
+salary
+Location
+title
+company
 
--	Name: Iowa_Liquor_Sales_reduced.csv
--	Delimiter: ","
--	Records: 2,709,552
--	Sources: Iowa Department of Commerce, Alcoholic Beverages Division
--	Columns:
--
-	-	**Date** - unique row ID - integer
-	-	**Store Number** - unique ID for liquor store - integer
-	-	**City** -  city in which store located - string
-	-	**Zip Code** - zip code in which store located - string
-	-	**County Number** - IOWA county number in which store located - integer
-	-	**County** - IOWA county name in which store located - string
-	-	**Category** - numerical category for liquor type - integer
-	-	**Category Name** - text name for liquor type - string
-	-	**Vendor Number** - unique id for supplier to state - integer
-	-	**Item Number** - unique id for actual product sku - integer
-	-	**Bottle Volume (ml)** - size in ml of bottle - integer
-	- **State Bottle Cost** - cost from the supplier to the state - float
-	- **State Bottle Retail** - cost from the state to the store - float
-	- **Bottles Sold** - quantity of bottle sold - integer
-	- **Sale (Dollars)** - total sale of this transaction - float
-	- **Volume Sold (Liters)** - total volume of this transaction in liters - float
-	- **Volume Sold (Gallons)** - total volume of this transaction in gallons - float  
+Lastly, we obtained a Cost of Living index for cities in our scraped dataset from expatistan.com.
 
 ### PARSE THE DATA
+Much of our efforts was spent cleaning the various columns. We had functions for cleaning the reviews, the salary, the post_date, the title, and various other fields we felt needed standardization.
 
-Although data was available to us for years from 2012-2016, we focused only on the 2015 data as a reasonable measure of yearly sales and because it was a manageable size. The full dataset from 2012-2016 was over 2.7GB and we didn't have the resources to deal with such a large load as that. The 2015 sample was 360MB and was far easier to work with for the purposes of this project.
+One process that included a manual inspection and tagging of the data was the "binning" of the title data into 3 separate bins names ENTRY-LEVEL, MID-LEVEL, SENIOR-LEVEL experience level. We wrote code to programmatically bin the data, however the initial work to determine which title keywords should be assigned to which bin was a process that required some manual decisions.
 
-We read the liquor sales data in with python pandas library from a csv file. The csv file we were presented was cleaned somewhat from the source files at data.iowa.gov. Specifically, they had the "Store Location" field dropped. The "Store Location" field contained \n linebreaks which may have led to undesirable parsing results.
+This binning step was very important because these bins were directly used as features in our model as well as a way to join the glassdoor dataset. Decisions to assign a particular job listing as ENTRY/MID/SENIOR were somewhat subjective and could have significantly influenced our results. It would have perhaps been better to use countvectorizer to tokenize the titles and assign weights such as word occurrence. Further work would be required to investigate this more fully.
 
-We compiled from a [few](http://www.unitedstateszipcodes.org/zip-code-database/) [other](http://www.iowayouthsurvey.iowa.gov/images/iacountiesnumbers.pdf) [sources](https://www.census.gov/geo/maps-data/data/tiger-line.html) a master lookup reference of ZIP, COUNTY, COUNTY#, CITY, ZIP-AREA-SQKM which we used to join against our liquor database and fill in any erroneous or missing data for those liquor fields.
-
-This master zip-code-database file also contained the geographic area for the particular zip code in units of square meters. We did not that there are now more zip codes in the state than we had unique geographic area for. It seems that some larger zip codes were split into 1 or more smaller zip codes sometime since the area data was compiled. This should not affect our model since we are using the geographic area simply as a point of information in our results and not as an input to our model.
+Likewise, glassdoor data was prepared, and titles binned by experience level as above.
 
 ### MINE THE DATA
 
-Our overall goal is to develop a model to recommend zip codes which are best performing based on 2 target metrics.
+Our overall goal was to attempt to make recommendations regarding which parts of a job listing might be used to determine if the positions salary would be above or below the median. I think we may have missed the mark slightly in this task. Because of the shortcomings of the glassdoor dataset, we were ultimately only able to use City and the binned Experience Level as the features of our model.
 
-	1) Maximum Total Overall Sales in Dollars for the Zip code and
-	2) Maximum Total Volume Sold in Liters for the Zip Code
+Due to this constrained feature-set, the analysis which was performed was more academic than enlightening. What we did was use the glassdoor data to train our model and compared that to the test set of the indeed data. The results and predictions below are a results of this train-test methodology.
 
-In order to obtain model to predict the 2 targets above, we utilized, exclusively the demographic features which we had joined to our liquor dataset by zip code.
+#############
 
-Before performing any aggregation or discarding any outliers, we took a snapshot to see which zip codes had the highest yearly total sales.
-
-![](/images/project-03/top_10_zips_before.png)
-
-Prior to performing significant modeling efforts, we needed to first perform a bit of cleanup and aggregation on the initial data.
-
-We noticed that there were a very small number of very large "distributer" stores. We recognized them as significant outliers and trimmed them by setting our threshold for exclusion to be any stores with greater than $100,000 in yearly sales. This threshold was arrived at by visual inspection of the following histogram.
-
-![](/images/project-03/distribution-of-store-sales-before.png)
-
-Once we had trimmed outlier stores we still had a skewed distribution, however, we were comfortable with the 1 order of magnitude shorter tail. (see below)
-
-![](/images/project-03/distribution-store-sales.png)
-
-After the elimination of the outlier stores, we went on to aggregate total sales and total volume on the zip code level for all stores. As noted above, these would be our targets for our model.
-
-```
-# Aggregate sales and volume by zip code
-store_aggs = ['Store Sales', 'Store Volume']
-zip_summary = df3.groupby('Zip Code')[store_aggs].sum().reset_index().dropna()
-zip_summary.columns = ['Zip Code', 'Zip Sales - Total', 'Zip Volume - Total']
-zip_aggs = ['Zip Sales - Total', 'Zip Volume - Total']
-```
-
-We have now arrived at these Top performing Actual Zip Codes based on Total Yearly Sales:
-
-![](/images/project-03/top_10_zips_no_outs.png)
-
-In an effort to understand how our demographic data may be correlated with our targets, we created a heat map for each. You should notice that they depict an nearly identical correlation map for both targets. This should be intuitive because Sales should be directly proportional to Volume sold.
-
-Sales  | Volume
---|--
-![](/images/project-03/total_sales_heatmap.png)  |  ![](/images/project-03/total_volume_heatmap.png)
-
-When looking at the heatmaps while sorted by the correlation figure, a few unexpected features rise to the top. Namely, population of persons "<5 years old" and "# of owner-occupied housing units". While median household income seems to be very weakly correlated.
-
-Sales (Sorted)  | Volume (Sorted)
---|--
-![](/images/project-03/total_sales_heatmap_sorted.png)  |  ![](/images/project-03/total_volume_heatmap_sorted.png)
-
-
+In conclusion, we can surmise that our model can, with reasonable accuracy, make a prediction about whether a salary would be above or below the median salary in the genre of "Data Scientist" jobs.
 
 ### REFINE THE DATA
 
